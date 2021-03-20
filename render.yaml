@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: blitzapp
+    env: node
+    plan: starter
+    buildCommand: cd mapbox-blitz/ && yarn --frozen-lockfile --prod=false && blitz build
+    startCommand: cd mapbox-blitz/ && blitz start
+    envVars:
+      - key: NODE_ENV
+        value: production
